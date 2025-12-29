@@ -1,35 +1,46 @@
+import { FontAwesome } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
 import React from 'react';
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { useColorScheme } from 'react-native';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+    const colorScheme = useColorScheme();
 
-  return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
-        }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
-  );
+    return (
+        <Tabs
+            screenOptions={{
+                tabBarActiveTintColor: '#10B981', // indigo-600
+                tabBarInactiveTintColor: '#9ca3af', // gray-400
+                headerShown: false,
+                tabBarStyle: {
+                    backgroundColor: '#ffffff',
+                    borderTopWidth: 1,
+                    borderTopColor: '#f3f4f6',
+                },
+            }}>
+
+            <Tabs.Screen
+                name="index"
+                options={{
+                    title: '',
+                    tabBarIcon: ({ color }) => <FontAwesome name="check-square-o" size={24} color={color} />,
+                }}
+            />
+            <Tabs.Screen
+                name="focus"
+                options={{
+                    title: '',
+                    tabBarIcon: ({ color }) => <FontAwesome name="clock-o" size={24} color={color} />,
+                }}
+            />
+            <Tabs.Screen
+                name="analytics"
+                options={{
+                    title: ' ',
+                    tabBarIcon: ({ color }) => <FontAwesome name="bar-chart" size={24} color={color} />,
+                }}
+            />
+
+        </Tabs>
+    );
 }

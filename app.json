@@ -8,6 +8,11 @@
     "scheme": "inzone",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0
+    },
     "ios": {
       "supportsTablet": true
     },
@@ -19,7 +24,8 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.mikibabi.inzone"
     },
     "web": {
       "output": "static",
@@ -38,11 +44,19 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "expo-sqlite"
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "733b8f86-2d0d-4ab4-bbfe-3e78599c9ad3"
+      }
+    },
+    "owner": "miki-babi"
   }
 }
