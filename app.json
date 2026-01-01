@@ -45,7 +45,15 @@
           }
         }
       ],
-      "expo-sqlite"
+      [
+        "expo-audio",
+        {
+          "microphonePermission": "Allow InZone to access your microphone.",
+          "recordAudioAndroid": true
+        }
+      ],
+      "expo-sqlite",
+      "expo-audio"
     ],
     "experiments": {
       "typedRoutes": true,

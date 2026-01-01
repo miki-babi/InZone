@@ -31,3 +31,10 @@ export const notesTable = sqliteTable("notes_table", {
   completed: integer("completed", { mode: 'boolean' }).default(false).notNull(),
   createdAt: integer("created_at", { mode: "timestamp" }).$defaultFn(() => new Date()),
 });
+
+export const voiceJournalTable = sqliteTable("voice_journal_table", {
+  id: int().primaryKey({ autoIncrement: true }),
+  filePath: text("file_path").notNull(), // path to the audio file
+  category: text().notNull(), // category like Work, Personal, Ideas
+  recordedAt: integer("recorded_at", { mode: "timestamp" }).$defaultFn(() => new Date()), // timestamp in ms
+});
